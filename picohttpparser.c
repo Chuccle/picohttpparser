@@ -24,7 +24,6 @@
  * IN THE SOFTWARE.
  */
 
-#include <assert.h>
 #include <stddef.h>
 #include <string.h>
 #ifdef __SSE4_2__
@@ -655,8 +654,6 @@ ssize_t phr_decode_chunked(struct phr_chunked_decoder *decoder, char *buf, size_
             ++src;
             decoder->_state = CHUNKED_IN_TRAILERS_LINE_HEAD;
             break;
-        default:
-            assert(!"decoder is corrupt");
         }
     }
 
